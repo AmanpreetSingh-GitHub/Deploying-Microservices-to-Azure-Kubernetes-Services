@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\Coral.Infrastructure.CrossCutting\Coral.Infrastructure.CrossCutting.csproj" />
+    <ProjectReference Include="..\Coral.Employee.Broker\Coral.Employee.Broker.csproj" />
+    <ProjectReference Include="..\Coral.Employee.Domain\Coral.Employee.Domain.csproj" />
+    <ProjectReference Include="..\Coral.Employee.Persistance\Coral.Employee.Persistance.csproj" />
+  </ItemGroup>
+
+</Project>

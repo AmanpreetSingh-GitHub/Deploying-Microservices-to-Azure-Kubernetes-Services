@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\Coral.Infrastructure.CrossCutting\Coral.Infrastructure.CrossCutting.csproj" />
+    <ProjectReference Include="..\Coral.Employee.Domain\Coral.Employee.Domain.csproj" />
+    <ProjectReference Include="..\Coral.Employee.Persistance\Coral.Employee.Persistance.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Handlers\" />
+    <Folder Include="Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="9.0.0" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,21 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: masterdataservice-deployment  
+  namespace: development
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: masterdataservice-pod
+  template:
+    metadata:
+      labels:
+        app: masterdataservice-pod
+    spec:
+      containers:
+      - name: masterdataservice-container
+        image: coralregistry.azurecr.io/masterdataservice:438
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80

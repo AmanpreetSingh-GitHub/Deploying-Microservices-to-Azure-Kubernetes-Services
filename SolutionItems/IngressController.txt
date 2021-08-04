@@ -1,0 +1,18 @@
+az aks get-credentials --resource-group coral --name coralaks
+
+# Create a namespace for your ingress resources
+kubectl create namespace development
+
+# Add the ingress-nginx repository
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+
+# Use Helm to deploy an NGINX ingress controller
+helm install nginx-ingress ingress-nginx/ingress-nginx \
+    --namespace development \
+    --set controller.replicaCount=1 \
+    --set controller.nodeSelector."kubernetes\.io/os"=linux \
+    --set controller.admissionWebhooks.patch.nodeSelector."kubernetes\.io/os"=linux \
+    --set defaultBackend.nodeSelector."kubernetes\.io/os"=linux \
+
+
+kubectl --namespace development get services -o wide -w nginx-ingress-ingress-nginx-controller

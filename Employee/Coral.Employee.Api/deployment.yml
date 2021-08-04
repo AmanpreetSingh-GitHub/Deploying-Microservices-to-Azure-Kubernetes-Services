@@ -1,0 +1,21 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: employeeservice-deployment  
+  namespace: development
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: employeeservice-pod
+  template:
+    metadata:
+      labels:
+        app: employeeservice-pod
+    spec:
+      containers:
+      - name: employeeservice-container
+        image: coralregistry.azurecr.io/employeeservice:437
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80

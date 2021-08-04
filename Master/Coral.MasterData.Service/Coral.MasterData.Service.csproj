@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\Coral.Infrastructure.CrossCutting\Coral.Infrastructure.CrossCutting.csproj" />
+    <ProjectReference Include="..\Coral.MasterData.Broker\Coral.MasterData.Broker.csproj" />
+    <ProjectReference Include="..\Coral.MasterData.Domain\Coral.MasterData.Domain.csproj" />
+    <ProjectReference Include="..\Coral.MasterData.Persistance\Coral.MasterData.Persistance.csproj" />
+  </ItemGroup>
+
+</Project>
